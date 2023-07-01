@@ -1,37 +1,49 @@
 # 基于SpringBoot+Redis+Rabbitmq+Thymeleaf+Spring security的电子服装销售系统
 
-#### 介绍
+#### 一、介绍
 利用Springboot框架编写一个服装电子商务系统，有两种角色权限，买家和卖家，利用多种技术，Redis+Rabbitmq以及Spring security实现接口赋予权限
 
-#### 软件架构
-软件架构说明
+#### 二、业务说明
+1.  商家用户可根据商家用户账户和密码进行登录，登录密码不可明文展示，需要进行加密（盐值，Base64编码等）
+2.  购买用户可根据购买用户账户和密码进行登录，登录密码不可明文展示，需要进行加密（盐值，Base64编码等）
+3.  商家用户和购买用户都可进行账户的注册。
+4.  商家用户能够上传商品的具体信息，购买用户则不可以进行此操作。
+5.  对于购买用户所购买的记录需要进行管理，做到购买记录可溯源。
 
 
-#### 安装教程
+#### 三、实现需求
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+1.	应用程序服务器使用Springboot框架
+2.	使用Mybaties框架连接数据库并进行操作
+3.	所有接口进行权限鉴别（使用spring security）
+4.	前端模板渲染引擎使用Thymeleaf框架; 除首页外，有如下6个功能的页面：
+商品增加页面，商品修改页面，商品查询页面
+商品购买记录查询页面，购买用户个人属性修改页面，商家用户个人属性修改页面。
+5.	所有实体表在管理系统中都应当有相应的增、删、改、查。
+6.	所有异常都需要捕捉并且处理。
+7.	能够使用内存数据库Redis实现相关功能，将登录用户存进Redis数据库中符合高速访问的背景
+8.	使用RabbitMQ进行发送购买成功的通知QQ邮件
 
 
-#### 特技
+#### 四、效果图
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+ **1.  登录** 
+![输入图片说明](%E7%99%BB%E5%BD%95.png)
+ **2.  注册** 
+![输入图片说明](%E6%B3%A8%E5%86%8C.png)
+ **3.  首页** 
+![输入图片说明](%E9%A6%96%E9%A1%B52.png)
+ **4.  购买** 
+![输入图片说明](%E8%B4%AD%E4%B9%B0.png)
+ **5. 修改** 
+![输入图片说明](%E4%BF%AE%E6%94%B9.png)
+ **6. 卖家** 
+![输入图片说明](%E5%8D%96%E5%AE%B6.png)
+
+#### 五、获取方式
+
+1.  有需要可联系加微信号：LZZJ_0615
+2.  请备注 服装销售系统源码 获取
+3.  其他勿扰谢谢
+4.  该项目需要付费获取，编码不易
+
